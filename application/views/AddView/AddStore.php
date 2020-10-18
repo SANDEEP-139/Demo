@@ -1,0 +1,43 @@
+<?php include_once('header.php');
+include_once('sidebar.php'); ?>
+
+<br><br><br><br>
+
+<div class="container">
+  <div class="breadcrumb-header justify-content-between">
+    <div class="my-auto">
+      <div class="d-flex">
+        <h4 class="content-title mb-0 my-auto">Add Store</h4>
+      </div>
+    </div>
+  </div>
+  <?php if ($this->session->flashdata('success')) { ?>
+    <div style="width:70%;margin-left:20%;" class="alert alert-success"> <?= $this->session->flashdata('success') ?> </div>
+  <?php } ?>
+  <br><br>
+  <div class="card">
+    <div class="card-body">
+      <div class="AddStoreDiv">
+        <form class="AddStoreForm" action="<?= base_url('Additems/Addstore') ?>" method="post">
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+      <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" required>
+      
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
+          </div>
+           <div class="form-group">
+            <label for="inputStore">Store Name</label>
+            <input type="text" class="form-control" name="store_name" id="store_name" placeholder="Storename" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php include_once('footer.php'); ?>
